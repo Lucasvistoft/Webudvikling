@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden; /* Forhindrer evt. horisontal scroll */
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* Gør det muligt at menuen går til ny linje */
+}
+
+header img {
+    width: auto;
+    margin-left: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif
+    transition color 0.3s;
+    font-size:15px;
+    
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menuen stables lodret */
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header {
+        flex-direction: column; /* Logo + menu oven på hinanden */
+        align-items: flex-start;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+ul a {
+    color: darkslategrey; /* Sætter linkfarven til grå */        /* Ændrer farven ved hover til sort */
+    text-decoration: none; /* Fjerner understregningen */
+    font-weight: normal;     /* Bevarer fed skrift, hvis du vil */
+    transition: color 0.5s;
+    text-transform: uppercase; /* Gør teksten store bogstaver */
+    margin-right: 60px;
+    font-size: normal;
+    font-family: Tt commons, sans-serif;
+}
+
+/* Kontakt side layout */
+.contact-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Venstre side */
+.contact-left {
+  flex: 1;
+  position: relative;
+}
+
+.contact-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: left;
+  max-width: 70%;
+}
+
+.contact-details h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Højre side */
+.contact-right {
+  flex: 1;
+  background: #fff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-right h3 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #333;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right input,
+.contact-right textarea {
+  margin-bottom: 20px;
+  padding: 14px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 14px;
+  background: #f4f2ef;
+}
+
+.contact-right textarea {
+  resize: none;
+}
+
+.contact-right button {
+  background: #364b49;
+  color: white;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.contact-right button:hover {
+  background: #1c2a29;
+}
+
+/* WhatsApp knap */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-button img {
+  width: 32px;
+  height: 32px;
+}
